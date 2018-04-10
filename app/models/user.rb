@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :email, :name, presence: true
   validates :email, :username, uniqueness: true
   validates :email, format: { with: /@/ }
-  validates :username, length: { maximum: 40 }, format: { with: /\A[a-zA-z0-9_]+\z/ }
+  validates :username, length: { maximum: 40 }, format: { with: /\A[a-zA-z0-9_?]+\z/ }
 
   attr_accessor :password
 
