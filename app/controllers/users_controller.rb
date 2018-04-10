@@ -19,9 +19,14 @@ class UsersController < ApplicationController
     @user = User.new(name: 'Oleg', username: 'patrik!', avatar_url: 'https://pp.userapi.com/c824204/v824204653/c9b78/-ylFYNcR0lY.jpg')
     @questions = [
       Question.new(text: 'Как дела?', created_at: Date.parse('27.03.2016')),
-      Question.new(text: 'Идешь гулять?', created_at: Date.parse('28.03.2016'))
+      Question.new(text: 'Идешь гулять?', created_at: Date.parse('28.03.2016')),
+      Question.new(text: 'Идешь на пары?', created_at: Date.parse('28.03.2016')),
+      Question.new(text: 'Купил телефон?', created_at: Date.parse('28.03.2016')),
+      Question.new(text: 'Как сам?', created_at: Date.parse('28.03.2016')),
+      Question.new(text: 'Знаешь чему равен квадратный корень из 100?', created_at: Date.parse('28.03.2016'))
     ]
 
     @new_question = Question.new
+    @questions_count = @questions.count
   end
 end
