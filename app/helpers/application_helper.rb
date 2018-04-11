@@ -7,32 +7,32 @@ module ApplicationHelper
     end
   end
 
-  def sklonenie(count)
+  def sklonenie(count, one_obj, three_obj, many_obj)
     if count == nil || !count.is_a?(Numeric)
       count = 0
     end
 
     if count >= 11 && count <= 14
-      return "вопросов"
+      return many_obj
     end
 
     ostatok = count % 10
     ostatok_one_hundred = count % 100
 
     if ostatok_one_hundred.between?(11, 14)
-      return "вопросов"
+      return many_obj
     end
 
     if ostatok == 1
-      return "вопрос"
+      return one_obj
     end
 
     if ostatok >= 2 && ostatok <= 4
-      return "вопроса"
+      return three_obj
     end
 
     if (ostatok >= 5 && ostatok <= 9) || ostatok == 0
-      return "вопросов"
+      return many_obj
     end
   end
 end
