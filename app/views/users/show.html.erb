@@ -45,8 +45,9 @@
       <% @questions.each do |question| %>
         <%= render partial: 'questions/question', object: question %>
       <% end %>
+
       <div class="text-center">
-        <%= "Всего у Вас: #{@questions_count}" %>
+        <%= "Всего: #{@questions_count}" %>
         <%= sklonenie(@questions_count, "вопрос", "вопроса", "вопросов") %>
       </div>
     </div>
