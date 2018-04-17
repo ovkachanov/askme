@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
     @user = User.new(user_params)
     if @user.save
-      redirect_to user_path(@user), notice: 'Пользователь успешно зарегестрирован!'
+      redirect_to user_path(@user), notice: "Пользователь #{@user.username} зарегестрирован!"
     else
       render 'new'
     end
@@ -37,6 +37,8 @@ class UsersController < ApplicationController
     @questions = @user.questions.order(created_at: :desc)
     @new_question = @user.questions.build
     @questions_count = @questions.count
+    @answers_count = @questions.where.not(answer: nil).count
+    @unanswered_count = @questions_count - @answers_count
   end
 
   private
