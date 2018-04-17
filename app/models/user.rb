@@ -10,10 +10,10 @@ class User < ApplicationRecord
   validates :email, :name, presence: true
   validates :email, :username, uniqueness: true
   validates :email, format: { with: /@/ }
-  validates :username, length: { maximum: 40 }, format: { with: /\A[a-zA-z0-9_?]+\z/ }
+  validates :username, length: { maximum: 40 }, format: { with: /\A[A-Za-z]+_?\d*\z/ }
 
   before_save :encrypt_password
-  before_validation :downcase_username!, on: :create
+  before_validation :downcase_username
 
   attr_accessor :password
 
@@ -43,7 +43,7 @@ class User < ApplicationRecord
   end
 
   private
-    def downcase_username!
+    def downcase_username
       self.username = username.downcase
     end
 end
