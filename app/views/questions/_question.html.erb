@@ -10,9 +10,11 @@
       </div>
     <% end %>
 
-    <% if question.author %>
+    <% if question.author.present? %>
       <span class="text-small">Автор: </span>
       <%= link_to "@#{question.author.username}", user_path(question.author) %>
+    <% else %>
+      anonymous
     <% end %>
 
     <div class="question-date">
