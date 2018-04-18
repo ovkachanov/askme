@@ -42,3 +42,9 @@ a {
   font-size: 20px;
   color: #dc554f;
 }
+
+.head-page {
+  padding: 10px 10px;
+  background: rgb(217, 230, 229);
+  font-size: 20px;
+}
