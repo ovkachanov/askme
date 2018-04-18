@@ -7,6 +7,14 @@ module ApplicationHelper
     end
   end
 
+  def user_background(user)
+    if user.background.present?
+      user.background
+    else
+      user.background = "#005a55"
+    end
+  end
+
   def sklonenie(count, one_obj, three_obj, many_obj)
     if count == nil || !count.is_a?(Numeric)
       count = 0
