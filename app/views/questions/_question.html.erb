@@ -10,8 +10,15 @@
       </div>
     <% end %>
 
+    <% if question.author %>
+      <span class="text-small">Автор: </span>
+      <%= link_to "@#{question.author.username}", user_path(question.author) %>
+    <% end %>
+
     <div class="question-date">
       <%= l(question.created_at, format: :short) %>
+      <% if @user.username.present? %>
+      <% end %>
     </div>
   </div>
 
