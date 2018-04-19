@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :email, :username, uniqueness: true
   validates :email, format: { with: /@/ }
   validates :username, length: { maximum: 40 }, format: { with: /\A[A-Za-z]+_?\d*\z/ }
+  validates :background, format: { with: /\A\#[\da-fA-Z]{6}\z/ }
 
   before_save :encrypt_password
   before_validation :downcase_username
