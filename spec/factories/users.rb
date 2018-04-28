@@ -9,5 +9,6 @@ FactoryBot.define do
     username "PaTrik_88"
     password '12345678'
     email
+    background "#005a55"
   end
 end
