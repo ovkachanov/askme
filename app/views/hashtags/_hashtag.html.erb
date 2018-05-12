@@ -1,0 +1,10 @@
+<div class="content-wrapper buffer-both">
+  <div class="buffer-both text-center">
+    <h1>Все хэштеги</h1>
+    <% @hashtags.each do |hashtag| %>
+      <ul>
+        <li><%= link_to hashtag.name, hashtag_path(hashtag) %></li>
+      </ul>
+    <% end %>
+  </div>
+</div>
