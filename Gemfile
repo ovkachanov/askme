@@ -9,6 +9,7 @@ gem 'rails', '~> 5.1.5'
 gem 'uglifier'
 gem 'puma', '~> 3.7'
 gem 'rails_12factor'
+gem 'pry'
 
 group :production do
   gem 'pg'

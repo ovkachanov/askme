@@ -13,7 +13,7 @@ class Question < ApplicationRecord
 
   def create_hashtag
     question = Question.find_by(id: self.id)
-    tags = self.text.scan(/#\w+/)
+    tags = self.text.scan(/#[[:alpha:]]+/)
     tags.uniq.map do |hashtag|
       hashtag = Hashtag.find_or_create_by(name: hashtag.downcase.delete('#'))
       question.hashtags << hashtag
