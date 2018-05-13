@@ -10,6 +10,13 @@
       </div>
     </div>
   <% end %>
-  <%= render partial: 'hashtags/hashtag', collection: @hashtags %>
 </div>
 
+<div class="content-wrapper buffer-both">
+  <div class="buffer-both text-center">
+    <h1 class="title-medium">Все хештеги</h1>
+  </div>
+  <div>
+    <%= render partial: 'hashtags/hashtag', collection: @hashtags %>
+  </div>
+</div>
