@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :background, format: { with: /\A\#[\da-fA-Z]{6}\z/ }
 
   before_save :encrypt_password
-  before_validation :username_empty?
+  before_validation :downcase_username
 
   attr_accessor :password
 
@@ -44,15 +44,12 @@ class User < ApplicationRecord
   end
 
   private
-    def downcase_username
+
+  def downcase_username
+    if self.username.blank?
+      return
+    else
       self.username = username.downcase
     end
-
-    def username_empty?
-      if self.username.blank?
-        return
-      else
-        downcase_username
-      end
-    end
+  end
 end
