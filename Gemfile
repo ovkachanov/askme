@@ -10,6 +10,7 @@ gem 'uglifier'
 gem 'puma', '~> 3.7'
 gem 'rails_12factor'
 gem 'pry'
+gem "recaptcha", require: "recaptcha/rails"
 
 group :production do
   gem 'pg'
