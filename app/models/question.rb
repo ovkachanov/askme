@@ -17,7 +17,7 @@ class Question < ApplicationRecord
     tags = self.text.scan(/#[[:alpha:]]+/)
     tags << self.answer.scan(/#[[:alpha:]]+/) if self.answer.present?
     tags.uniq.map do |hashtag|
-      hashtag = Hashtag.find_or_create_by(name: hashtag.to_s.downcase.delete('#'))
+      hashtag = Hashtag.find_or_create_by(name: hashtag.to_s.downcase.delete('#[]"'))
       question.hashtags << hashtag
     end
   end
@@ -28,7 +28,7 @@ class Question < ApplicationRecord
     tags = self.text.scan(/#[[:alpha:]]+/)
     tags << self.answer.scan(/#[[:alpha:]]+/) if self.answer.present?
     tags.uniq.map do |hashtag|
-      hashtag = Hashtag.find_or_create_by(name: hashtag.to_s.downcase.delete('#'))
+      hashtag = Hashtag.find_or_create_by(name: hashtag.to_s.downcase.delete('#[]"'))
       question.hashtags << hashtag
     end
   end
