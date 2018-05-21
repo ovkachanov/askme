@@ -12,10 +12,6 @@ class Question < ApplicationRecord
 
   private
 
-  def questions_with_hashtag
-    self.includes(:hashtags)
-  end
-
   def add_hashtag
     self.hashtags.clear
     tags = self.text.scan(/#[\p{L}0-9_]{1,35}/)
