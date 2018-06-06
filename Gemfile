@@ -11,7 +11,6 @@ gem 'puma', '~> 3.7'
 gem 'rails_12factor'
 gem 'pry'
 gem "recaptcha", require: "recaptcha/rails"
-gem 'listen', '>= 3.0.5', '< 3.2'
 
 group :production do
   gem 'pg'
@@ -24,6 +23,7 @@ end
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rspec-rails'
 end
 
