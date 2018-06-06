@@ -25,6 +25,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rspec-rails'
+  gem 'listen'
 end
 
 group :production do
