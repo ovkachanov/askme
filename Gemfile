@@ -27,6 +27,10 @@ group :development do
   gem 'rspec-rails'
 end
 
+group :production do
+  gem 'pg'
+end
+
 group :test do
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
