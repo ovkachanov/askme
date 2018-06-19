@@ -1,24 +1,28 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Краткое описание
 
-Things you may want to cover:
+Приложение на котором Вы можете задавать вопросы и получать на них ответы пользователей или ваших друзей
 
-* Ruby version
+Реализована возможность создавать хэштеги в вопросах и ответах.
 
-* System dependencies
+## Используемые технологии:
+   
+   В качестве защиты от спама использована [reCaptcha](https://www.google.com/recaptcha/intro/v3beta.html) от Google
 
-* Configuration
+## Установка и запуск
 
-* Database creation
+Перед запуском приложения необходимо выполнить установку всех необходимых гемов и прогнать миграции базы данных. Для этого в консоли необходимо выполнить команды:
 
-* Database initialization
+    bundle install
+    rake db:migrate
 
-* How to run the test suite
+Также необходимо настроить переменные окружения для корректной работы reCaptcha:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    RECAPTCHA_SITE_KEY
+    RECAPTCHA_SECRET_KEY
+    
+ Рабочий проект расположен на хероку по адресу: [Askmefriend](https://askmefriend.herokuapp.com/)
+ 
+ Автор приложения: [Олег Качанов](https://www.linkedin.com/in/%D0%BE%D0%BB%D0%B5%D0%B3-%D0%BA%D0%B0%D1%87%D0%B0%D0%BD%D0%BE%D0%B2-b3b4a8114/)
+ 
+ 
